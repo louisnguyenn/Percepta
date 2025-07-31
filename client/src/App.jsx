@@ -1,10 +1,22 @@
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [array, setArray] = useState([]);
+
+  const fetchAPI = async () => {
+    const response = await axios.get("http://localhost:8080/api/users");
+    // console.log(response.data.users);
+    setArray(response.data.users);
+  };
+
+  useEffect(() => {
+    fetchAPI();
+  }, []);
 
   return (
     <>
@@ -21,10 +33,15 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+        {array.map((user, index) => (
+          <div key={index}>
+            <span>{user}</span>
+            <br></br>
+          </div>
+        ))}
       </div>
+
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
