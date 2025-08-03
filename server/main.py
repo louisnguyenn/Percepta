@@ -51,7 +51,7 @@ def detect_intrusion():
     processed_frame, people_count = detect(frame)   # sending each frame to the detect function, where it will be processed
                             # for object detection 
 
-    if people_count > 0"
+    if people_count > 0:
         cv2.imwrite("detected.jpg", frame)
 
     return jsonify({

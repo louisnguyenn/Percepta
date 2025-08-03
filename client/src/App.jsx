@@ -17,12 +17,6 @@ function App() {
 
   return (
     <>
-      {array.map((user, index) => (
-        <div key={index}>
-          <span>{user}</span>
-          <br></br>
-        </div>
-      ))}
     </>
   )
 }
