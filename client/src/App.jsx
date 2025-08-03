@@ -18,8 +18,10 @@ function App() {
 
   return (
     <>
-      {/* <Test /> */}
-      <Hero />
+      <div className="bg-black">
+        {/* <Test /> */}
+        <Hero />
+      </div>
     </>
   )
 }
