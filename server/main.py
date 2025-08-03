@@ -5,7 +5,7 @@ import imutils
 import numpy as np
 
 app = Flask(__name__)
-cors = CORS(app) # this allows frontend to access the backend
+cors = CORS(app, origins=['*']) # this allows frontend to access the backend
 
 # declaring the object detector setup
 HOGCV = cv2.HOGDescriptor() # object detection
@@ -67,6 +67,15 @@ def detect_intrusion():
         "image_saved_as": filename,
         "timestamp": timestamp,
         "alert": people_count > 0
+    })
+
+# this is a testing function to see if the frontend is connected to the backend
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """Health check endpoint to verify backend is running"""
+    return jsonify({
+        "status": "healthy",
+        "message": "Percepta backend is running",
     })
 
 if __name__ == "__main__":
