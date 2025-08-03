@@ -3,9 +3,13 @@ from flask_cors import CORS
 import cv2
 import imutils
 import numpy as np
+from datetime import datetime
+import os
 
 app = Flask(__name__)
-cors = CORS(app, origins=['*']) # this allows frontend to access the backend
+cors = CORS(app, origins=['*']) # this allows frontend to access the backend to all origins (or origins=['http://localhost:5173']) would also work
+
+os.makedirs('detections', exist_ok=True)
 
 # declaring the object detector setup
 HOGCV = cv2.HOGDescriptor() # object detection
@@ -15,7 +19,7 @@ HOGCV.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 # it takes a frame and detects a person in it and then returns the frame with the person in a green box
 def detect(frame):
     # the detectMultiScale() method returns the coordinates of the box and the confidence value of a person (2-tuple)
-    boxes, weights =  HOGCV.detectMultiScale(frame, winStride = (4, 4), padding = (8, 8), scale = 1.03)
+    boxes, weights = HOGCV.detectMultiScale(frame, winStride = (4, 4), padding = (8, 8), scale = 1.03)
     
     person = 1
     # creating the green box
@@ -37,7 +41,12 @@ def detect_intrusion():
     
     # check if camera opened successfully
     if not video.isOpened():
-        return jsonify({"error": "Could not open camera."}), 500 # returning server error 500
+        for i in range(1, 5):  # Try camera indices 1-4
+            video = cv2.VideoCapture(i)
+            if video.isOpened():
+                break
+        else:
+            return jsonify({"error": "Could not open camera."}), 500 # returning server error 500
     
     video.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     video.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)

@@ -13,19 +13,10 @@ export const Test = () => {
     setResult(null);
 
     try {
-      const response = await axios.get('http://localhost:5000/api/detect', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await axios.post('http://localhost:5000/api/detect');
 
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      setResult(data);
+      // axios automatically parses JSON and puts it in response.data
+      setResult(response.data);
     } catch (err) {
       setError(err.message);
       console.error('Detection error:', err);
