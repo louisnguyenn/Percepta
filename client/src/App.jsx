@@ -6,7 +6,7 @@ function App() {
   const [array, setArray] = useState([]);
 
   const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:5000/api/users");
+    const response = await axios.get("http://localhost:5000/api/detect");
     // console.log(response.data.users);
     setArray(response.data.users);
   };
