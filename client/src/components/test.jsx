@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Camera, AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
+import axios from "axios";
 
-const Test = () => {
+export const Test = () => {
   const [isDetecting, setIsDetecting] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
@@ -12,7 +13,7 @@ const Test = () => {
     setResult(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/detect', {
+      const response = await axios.get('http://localhost:5000/api/detect', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -154,5 +155,3 @@ const Test = () => {
     </div>
   );
 };
-
-export default Test;

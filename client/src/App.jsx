@@ -1,5 +1,6 @@
 import './App.css'
-import Test from './components/test.jsx'
+import { Test } from './components/test.jsx'
+import axios from "axios"
 import './index.css'
 
 function App() {
