@@ -39,6 +39,9 @@ def detect_intrusion():
     if not video.isOpened():
         return jsonify({"error": "Could not open camera."}), 500 # returning server error 500
     
+    video.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    video.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+
     check, frame = video.read() # this method reads the video frame by frame
     video.release()
     
@@ -51,13 +54,19 @@ def detect_intrusion():
     processed_frame, people_count = detect(frame)   # sending each frame to the detect function, where it will be processed
                             # for object detection 
 
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = None
+
     if people_count > 0:
-        cv2.imwrite("detected.jpg", frame)
+        filename = f"detections/intrusion_{timestamp}.jpg"
+        cv2.imwrite(filename, processed_frame)
 
     return jsonify({
         "message": "Detection complete.",
         "people_detected": people_count,
-        "image_saved_as": "detected.jpg" if people_count > 0 else None
+        "image_saved_as": filename,
+        "timestamp": timestamp,
+        "alert": people_count > 0
     })
 
 if __name__ == "__main__":

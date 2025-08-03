@@ -1,22 +1,23 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
 import './App.css'
+import Test from './components/test.jsx'
+import './index.css'
 
 function App() {
-  const [array, setArray] = useState([]);
+  // const [array, setArray] = useState([]);
 
-  const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:5000/api/detect");
-    // console.log(response.data.users);
-    setArray(response.data.users);
-  };
+  // const fetchAPI = async () => {
+  //   const response = await axios.get("http://localhost:5000/api/detect");
+  //   // console.log(response.data.users);
+  //   setArray(response.data.users);
+  // };
 
-  useEffect(() => {
-    fetchAPI();
-  }, []);
+  // useEffect(() => {
+  //   fetchAPI();
+  // }, []);
 
   return (
     <>
+      <Test />
     </>
   )
 }
