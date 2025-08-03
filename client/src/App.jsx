@@ -1,6 +1,6 @@
 import './App.css'
 import { Test } from './components/test.jsx'
-import axios from "axios"
+import { Hero } from "./components/hero.jsx"
 import './index.css'
 
 function App() {
@@ -18,7 +18,8 @@ function App() {
 
   return (
     <>
-      <Test />
+      {/* <Test /> */}
+      <Hero />
     </>
   )
 }
