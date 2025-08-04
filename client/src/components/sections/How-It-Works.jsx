@@ -21,6 +21,8 @@ export const HowItWorks = () => {
           timestamps and location data, making security analysis faster and more
           reliable than ever before.
         </p>
+
+        <img src="./public/output_frame.png" alt="Delivery man detected by program" className="w-[700px] h-auto mt-15"></img>
       </div>
     </section>
   );
