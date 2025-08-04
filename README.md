@@ -19,7 +19,7 @@
 - React
 - Vite
 - JavaScript
-- Tailwind CSS (optional styling framework)
+- Tailwind CSS
 
 ### Backend:
 - Python
@@ -34,7 +34,7 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/percepta.git
+git clone https://github.com/louisnguyenn/percepta.git
 cd percepta
 ```
 
