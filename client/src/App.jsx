@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Test } from "./components/test.jsx";
 import { Navbar } from "./components/Navbar.jsx";
 import { Hero } from "./components/sections/Hero.jsx";
+import { HowItWorks } from "./components/sections/How-It-Works.jsx";
 import { About } from "./components/sections/About.jsx";
 import { Footer } from "./components/sections/Footer.jsx";
 import { Dashboard } from "./pages/Dashboard.jsx";
@@ -23,10 +24,11 @@ function App() {
 
   return (
     <>
-      <div className="bg-[#212121]">
+      <div className="bg-[#2a2a2a]">
         {/* <Test /> */}
         <Navbar />
         <Hero />
+        <HowItWorks />
         <About />
         <Footer />
       </div>
