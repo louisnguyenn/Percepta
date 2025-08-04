@@ -13,7 +13,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen w-full flex flex-col items-center justify-center px-6 text-white text-center"
+      className="min-h-screen w-full flex flex-col items-center justify-center px-6 text-white text-center bg-[#2a2a2a]"
     >
       <div className="max-w-3xl">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-14">
