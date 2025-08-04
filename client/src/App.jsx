@@ -22,7 +22,6 @@ function App() {
 
   return (
     <>
-    
       <div className="bg-[#212121]">
         {/* <Test /> */}
         <Hero />
