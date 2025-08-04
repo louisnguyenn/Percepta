@@ -1,7 +1,7 @@
 import './App.css'
 import { Test } from './components/test.jsx'
-import { Hero } from "./components/hero.jsx"
-import { About } from "./components/About.jsx"
+import { Hero } from "./components/sections/Hero.jsx"
+import { About } from "./components/sections/About.jsx"
 import './index.css'
 
 function App() {
