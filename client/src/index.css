@@ -1,7 +1,33 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
+/* basic body styling */
 html,
 body {
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans-serif;
+  /* font-family: "Source Sans Pro", sans-serif; */
+  /* font-family: "Outfit", sans-serif; */
+  /* font-family: "JetBrains Mono", monospace; */
+}
+
+/* proper viewport behavior */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* improve scrolling on iOS */
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* font-family: "JetBrains Mono", monospace; */
+  font-family: "Space Grotesk", sans-serif;
 }
