@@ -1,9 +1,12 @@
-// Hero.jsx
 import { ArrowRight } from "lucide-react";
 import StarBorder from "../StarBorder";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
   const handleGetStarted = () => {
+    navigate("/dashboard");
     console.log("Get Started clicked!");
   };
 
