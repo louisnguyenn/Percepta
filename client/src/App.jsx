@@ -4,6 +4,7 @@ import { Hero } from "./components/sections/Hero.jsx"
 import { About } from "./components/sections/About.jsx"
 import { Footer } from "./components/sections/Footer.jsx"
 import './index.css'
+import { Route } from "lucide-react"
 
 function App() {
   // const [array, setArray] = useState([]);
