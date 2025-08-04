@@ -1,4 +1,4 @@
-import { Mail, Instagram, Linkedin, Facebook, Twitter, X } from "lucide-react";
+import { Mail, Instagram, Linkedin, Facebook } from "lucide-react";
 
 export const Contact = () => {
   return (
@@ -30,13 +30,13 @@ export const Contact = () => {
               Follow Us
             </h2>
             <div className="flex gap-4 text-white">
-              <span className="hover:-translate-y-1 transition-all duration-300">
+              <span className="hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                 <Instagram />
               </span>
-              <span className="hover:-translate-y-1 transition-all duration-300">
+              <span className="hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                 <Linkedin />
               </span>
-              <span className="hover:-translate-y-1 transition-all duration-300">
+              <span className="hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                 <Facebook />
               </span>
             </div>
