@@ -1,6 +1,7 @@
 import './App.css'
 import { Test } from './components/test.jsx'
 import { Hero } from "./components/hero.jsx"
+import { About } from "./components/About.jsx"
 import './index.css'
 
 function App() {
@@ -18,9 +19,10 @@ function App() {
 
   return (
     <>
-      <div className="bg-black">
+      <div className="bg-[#212121]">
         {/* <Test /> */}
         <Hero />
+        <About />
       </div>
     </>
   )
