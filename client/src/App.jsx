@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Test } from "./components/test.jsx";
+import { Navbar } from "./components/Navbar.jsx";
 import { Hero } from "./components/sections/Hero.jsx";
 import { About } from "./components/sections/About.jsx";
 import { Footer } from "./components/sections/Footer.jsx";
@@ -24,6 +25,7 @@ function App() {
     <>
       <div className="bg-[#212121]">
         {/* <Test /> */}
+        <Navbar />
         <Hero />
         <About />
         <Footer />

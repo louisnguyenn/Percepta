@@ -9,7 +9,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen max-w-8xl mx-auto flex flex-col justify-center items-center">
+    <section id="hero" className="min-h-screen max-w-8xl mx-auto flex flex-col justify-center items-center">
       <div className="flex-1 flex items-end justify-center pb-20">
         <h1 className="text-center text-8xl font-bold text-white">Percepta</h1>
       </div>
@@ -17,7 +17,7 @@ export const Hero = () => {
         <StarBorder
           as="button"
           color="#F59E0B"
-          speed="5s"
+          speed="6s"
           onClick={handleGetStarted}
         >
           <div className="font-bold flex items-center gap-2">
