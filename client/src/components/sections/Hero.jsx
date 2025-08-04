@@ -33,7 +33,7 @@ export const Hero = () => {
           speed="7s"
           onClick={handleGetStarted}
         >
-          <div className="font-bold flex items-center gap-2 text-white">
+          <div className="font-bold flex items-center gap-2 cursor-pointer">
             Get Started <ArrowRight size={18} />
           </div>
         </StarBorder>

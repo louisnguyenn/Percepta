@@ -29,16 +29,29 @@
   z-index: 0;
 }
 
+.star-border-container:hover .inner-content {
+  background-color: #e67a32;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.star-border-container:active .inner-content {
+  background-color: white;
+  color: #05091e;
+  transition: all 0.2s ease;
+}
+
 .inner-content {
   position: relative;
   border: 1px solid #222;
-  background: #FF8C42;
+  background: #ff8c42;
   color: white;
   font-size: 16px;
   text-align: center;
   padding: 16px 26px;
   border-radius: 20px;
   z-index: 1;
+  transition: all 0.3s ease;
 }
 
 @keyframes star-movement-bottom {
