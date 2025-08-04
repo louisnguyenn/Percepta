@@ -30,7 +30,7 @@ export const Hero = () => {
         <StarBorder
           as="button"
           color="#F59E0B"
-          speed="7s"
+          speed="4s"
           onClick={handleGetStarted}
         >
           <div className="font-bold flex items-center gap-2 cursor-pointer">

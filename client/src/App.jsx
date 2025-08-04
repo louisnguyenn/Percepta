@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Test } from "./components/test.jsx";
-import { Navbar } from "./components/Navbar";
 import { Home } from "./pages/Home";
 import { Dashboard } from "./pages/Dashboard.jsx";
 import "./index.css";
@@ -23,7 +22,6 @@ function App() {
     <>
       <div className="bg-[#2a2a2a]">
         <BrowserRouter>
-          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
