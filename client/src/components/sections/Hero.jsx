@@ -1,6 +1,7 @@
 import StarBorder from "../StarBorder";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Shield, Eye, Users, AlertTriangle } from "lucide-react";
+import CountUp from "../CountUp";
 
 export const Hero = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export const Hero = () => {
       className="min-h-screen w-full flex flex-col items-center justify-center px-6 text-white text-center bg-[#2a2a2a]"
     >
       <div className="max-w-3xl">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-12">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mt-15 mb-12">
           Percepta
         </h1>
         <p className="text-sm md:text-base leading-relaxed mb-4">
@@ -46,7 +47,14 @@ export const Hero = () => {
                   <AlertTriangle className="w-6 h-6 text-red-400" />
                 </div>
                 <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                  247
+                  <CountUp
+                    from={0}
+                    to={247}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />
                 </div>
                 <div className="text-sm text-gray-300 font-medium">
                   Threats Detected
@@ -60,7 +68,14 @@ export const Hero = () => {
                   <Users className="w-6 h-6 text-blue-400" />
                 </div>
                 <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                  15,420
+                  <CountUp
+                    from={0}
+                    to={15432}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />
                 </div>
                 <div className="text-sm text-gray-300 font-medium">
                   People Monitored
@@ -74,10 +89,17 @@ export const Hero = () => {
                   <Eye className="w-6 h-6 text-green-400" />
                 </div>
                 <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                  89
+                  <CountUp
+                    from={0}
+                    to={89}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />
                 </div>
                 <div className="text-sm text-gray-300 font-medium">
-                  Active Systems
+                  Alerts to Mobile Devices
                 </div>
               </div>
             </div>
@@ -88,7 +110,15 @@ export const Hero = () => {
                   <Shield className="w-6 h-6 text-purple-400" />
                 </div>
                 <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                  99.8%
+                  <CountUp
+                    from={0}
+                    to={99.8}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                  />
+                  %
                 </div>
                 <div className="text-sm text-gray-300 font-medium">
                   System Uptime
@@ -99,7 +129,7 @@ export const Hero = () => {
 
           <div className="mt-8 text-center">
             <p className="text-gray-400 text-sm">
-              Real-time security monitoring • 24/7 threat detection • Advanced
+              Real-time security monitoring • Reliable threat detection • Advanced
               AI protection
             </p>
           </div>
