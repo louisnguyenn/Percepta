@@ -13,8 +13,13 @@ export const Navbar = () => {
         <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-14">
           <a
             href="#hero"
-            className="text-white transition-all duration-300 text-lg font-semibold hover:scale-105 hover:font-bold"
+            className="text-white transition-all duration-300 text-xl font-semibold hover:scale-105 hover:font-bold flex items-center"
           >
+            <img
+              src="/logo.png"
+              alt="logo"
+              className="w-14 h-14"
+            />
             Percepta
           </a>
           <div className="hidden md:flex items-center space-x-8 ml-auto">
