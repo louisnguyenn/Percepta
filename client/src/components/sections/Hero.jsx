@@ -16,11 +16,11 @@ export const Hero = () => {
       <div className="flex-1 flex items-start justify-center pt-20">
         <StarBorder
           as="button"
-          color="white"
+          color="#F59E0B"
           speed="5s"
           onClick={handleGetStarted}
         >
-          <div className="flex items-center gap-2">
+          <div className="font-bold flex items-center gap-2">
             Get Started <ArrowRight size={16} />
           </div>
         </StarBorder>
