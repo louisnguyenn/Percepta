@@ -2,6 +2,7 @@ import './App.css'
 import { Test } from './components/test.jsx'
 import { Hero } from "./components/sections/Hero.jsx"
 import { About } from "./components/sections/About.jsx"
+import { Footer } from "./components/sections/Footer.jsx"
 import './index.css'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         {/* <Test /> */}
         <Hero />
         <About />
+        <Footer />
       </div>
     </>
   )
