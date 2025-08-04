@@ -6,7 +6,6 @@ import { About } from "./components/sections/About.jsx";
 import { Footer } from "./components/sections/Footer.jsx";
 import { Dashboard } from "./pages/Dashboard.jsx";
 import "./index.css";
-import { Route } from "lucide-react";
 
 function App() {
   // const [array, setArray] = useState([]);
@@ -23,6 +22,7 @@ function App() {
 
   return (
     <>
+    
       <div className="bg-[#212121]">
         {/* <Test /> */}
         <Hero />
