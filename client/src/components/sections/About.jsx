@@ -33,7 +33,7 @@ export const About = () => {
         </div>
 
         <div className="py-15 flex flex-col justify-center items-center">
-          <h2 className="text-5xl text-[#FF8C42] font-semibold mb-3">
+          <h2 id="how-it-works" className="text-5xl text-[#FF8C42] font-semibold mb-3">
             How it works
           </h2>
           <hr className="px-7 border-none bg-[#FF8C42] rounded h-1"></hr>

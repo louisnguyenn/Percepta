@@ -1,24 +1,28 @@
 export const Navbar = () => {
   return (
     <>
-      <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.95)] backdrop-blur-lg border-b border-white/10 shadow-lg">
-        <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
+      <nav className="fixed top-0 w-full z-40 bg-[#FF8C42]/90 border-b border-white/10 shadow-lg">
+        <div className="max-w-6xl mx-auto px-4 flex justify-between items-center h-14">
           <a
             href="#hero"
-            className="text-gray-300 hover:text-white transition-colors duration-300 text-lg font-semibold"
+            className="text-white hover:text-white transition-colors duration-300 text-lg font-semibold"
           >
             Percepta
           </a>
-          <a
-            href="#about"
-            className="text-gray-300 hover:text-white transition-colors duration-300"
-          >
-            About
-          </a>
-          <a
-            href="#contact"
-            className="bg-[#05091e] py-2 px-4 rounded-full border border-white/70 text-gray-300 hover:text-white hover:border-white transition-all duration-300"
-          ></a>
+          <div className="hidden md:flex items-center space-x-8 ml-auto">
+            <a
+              href="#how-it-works"
+              className="text-white hover:text-white transition-colors duration-300"
+            >
+              How it works
+            </a>
+            <a
+              href="#about"
+              className="text-white hover:text-white transition-colors duration-300"
+            >
+              About
+            </a>
+          </div>
         </div>
       </nav>
     </>
