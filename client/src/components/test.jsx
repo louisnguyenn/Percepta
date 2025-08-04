@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Camera, AlertCircle, CheckCircle, Loader2 } from 'lucide-react';
+import React, { useState } from "react";
+import { Camera, AlertCircle, CheckCircle, Loader2 } from "lucide-react";
 import axios from "axios";
 
 export const Test = () => {
@@ -13,13 +13,13 @@ export const Test = () => {
     setResult(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/detect');
+      const response = await axios.post("http://localhost:5000/api/detect");
 
       // axios automatically parses JSON and puts it in response.data
       setResult(response.data);
     } catch (err) {
       setError(err.message);
-      console.error('Detection error:', err);
+      console.error("Detection error:", err);
     } finally {
       setIsDetecting(false);
     }
@@ -27,14 +27,16 @@ export const Test = () => {
 
   const testBackendConnection = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/health');
+      const response = await fetch("http://localhost:5000/api/health");
       if (response.ok) {
-        alert('Backend is running!');
+        alert("Backend is running!");
       } else {
-        alert('Backend responded but with an error');
+        alert("Backend responded but with an error");
       }
     } catch (err) {
-      alert('Cannot connect to backend. Make sure Flask is running on port 5000');
+      alert(
+        "Cannot connect to backend. Make sure Flask is running on port 5000"
+      );
     }
   };
 
@@ -51,7 +53,9 @@ export const Test = () => {
           <div className="space-y-6">
             {/* Connection Test */}
             <div className="bg-white/5 rounded-lg p-6">
-              <h2 className="text-xl font-semibold text-white mb-4">Connection Test</h2>
+              <h2 className="text-xl font-semibold text-white mb-4">
+                Connection Test
+              </h2>
               <button
                 onClick={testBackendConnection}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
@@ -62,7 +66,9 @@ export const Test = () => {
 
             {/* Detection Test */}
             <div className="bg-white/5 rounded-lg p-6">
-              <h2 className="text-xl font-semibold text-white mb-4">Detection Test</h2>
+              <h2 className="text-xl font-semibold text-white mb-4">
+                Detection Test
+              </h2>
               <button
                 onClick={testDetection}
                 disabled={isDetecting}
@@ -94,10 +100,14 @@ export const Test = () => {
                 </div>
                 <p className="text-red-100 mt-2">{error}</p>
                 <div className="mt-3 text-sm text-red-200">
-                  <p><strong>Troubleshooting:</strong></p>
+                  <p>
+                    <strong>Troubleshooting:</strong>
+                  </p>
                   <ul className="list-disc list-inside mt-1 space-y-1">
                     <li>Make sure Flask backend is running (python app.py)</li>
-                    <li>Check if camera is available and not used by other apps</li>
+                    <li>
+                      Check if camera is available and not used by other apps
+                    </li>
                     <li>Verify CORS is enabled in Flask</li>
                     <li>Try refreshing the page</li>
                   </ul>
@@ -112,17 +122,26 @@ export const Test = () => {
                   <span className="font-medium">Detection Complete!</span>
                 </div>
                 <div className="space-y-2 text-white">
-                  <p><strong>Message:</strong> {result.message}</p>
-                  <p><strong>People Detected:</strong> {result.people_detected}</p>
+                  <p>
+                    <strong>Message:</strong> {result.message}
+                  </p>
+                  <p>
+                    <strong>People Detected:</strong> {result.people_detected}
+                  </p>
                   {result.image_saved_as && (
-                    <p><strong>Image Saved:</strong> {result.image_saved_as}</p>
+                    <p>
+                      <strong>Image Saved:</strong> {result.image_saved_as}
+                    </p>
                   )}
                 </div>
                 {result.people_detected > 0 && (
                   <div className="mt-4 p-3 bg-yellow-500/20 border border-yellow-500/50 rounded">
-                    <p className="text-yellow-200 font-medium">🚨 Intrusion Detected!</p>
+                    <p className="text-yellow-200 font-medium">
+                      🚨 Intrusion Detected!
+                    </p>
                     <p className="text-yellow-100 text-sm">
-                      {result.people_detected} person(s) detected in the camera feed.
+                      {result.people_detected} person(s) detected in the camera
+                      feed.
                     </p>
                   </div>
                 )}
@@ -132,7 +151,9 @@ export const Test = () => {
 
           {/* Instructions */}
           <div className="mt-8 bg-white/5 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-white mb-3">How to Use:</h3>
+            <h3 className="text-lg font-semibold text-white mb-3">
+              How to Use:
+            </h3>
             <ol className="list-decimal list-inside space-y-2 text-blue-200">
               <li>Make sure your Flask backend is running on port 5000</li>
               <li>First test backend connection</li>
