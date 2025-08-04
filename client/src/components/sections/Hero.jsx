@@ -4,35 +4,34 @@ import StarBorder from "../StarBorder";
 
 export const Hero = () => {
   const handleGetStarted = () => {
-    // Add your click logic here
     console.log("Get Started clicked!");
   };
 
   return (
     <section
       id="hero"
-      className="min-h-screen max-w-8xl mx-auto flex flex-col justify-center items-center"
+      className="min-h-screen w-full flex flex-col items-center justify-center px-6 text-white text-center"
     >
-      <div className="flex-1 flex items-end justify-center pb-20">
-        <h1 className="text-center text-8xl font-bold text-white">Percepta</h1>
-        <p className="leading-8 max-w-5xl">
-          Percepta uses advanced AI algorithms to analyze and interpret data,
-          providing insights that help you make informed decisions.
-        </p>
-        <p>
-          Our platform is designed to be user-friendly, allowing you to easily
-          navigate through features and access the information you need.
+      <div className="max-w-3xl">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-14">
+          Percepta
+        </h1>
+        <p className="text-sm md:text-base leading-relaxed mb-4">
+          Percepta is an intelligent security application that uses OpenCV to
+          detect human presence in real time and automatically capture images
+          upon detection.
         </p>
       </div>
-      <div className="flex-1 flex items-start justify-center pt-20">
+
+      <div className="mt-12">
         <StarBorder
           as="button"
           color="#F59E0B"
-          speed="6s"
+          speed="7s"
           onClick={handleGetStarted}
         >
-          <div className="font-bold flex items-center gap-2">
-            Get Started <ArrowRight size={16} />
+          <div className="font-bold flex items-center gap-2 text-white">
+            Get Started <ArrowRight size={18} />
           </div>
         </StarBorder>
       </div>
