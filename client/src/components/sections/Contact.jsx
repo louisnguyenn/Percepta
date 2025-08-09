@@ -13,15 +13,15 @@ export const Contact = () => {
               <a href="#about" className="text-white hover:underline mb-2">
                 About
               </a>
-              <a className="text-gray-500 hover:underline mb-2">Careers (coming soon)</a>
-              <a className="text-gray-500 hover:underline">Blog (coming soon)</a>
+              <a className="text-gray-500 hover:underline mb-2 cursor-pointer">Careers (coming soon)</a>
+              <a className="text-gray-500 hover:underline cursor-pointer">Blog (coming soon)</a>
             </div>
           </div>
           <div>
             <h2 className="text-white font-semibold text-lg mt-15 mb-5">
               Support
             </h2>
-            <a className="text-gray-500 hover:underline">
+            <a className="text-gray-500 hover:underline cursor-pointer">
               Contact Us (coming soon)
             </a>
           </div>
