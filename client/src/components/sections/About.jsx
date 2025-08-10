@@ -1,4 +1,3 @@
-import AnimatedContent from "../AnimatedContent";
 import { ScrollReveal } from "../ScrollReveal";
 
 export const About = () => {

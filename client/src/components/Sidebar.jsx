@@ -12,7 +12,12 @@ export const Sidebar = () => {
   };
 
   return (
-    <nav className="fixed left-0 top-0 h-screen w-52 py-2 bg-[#C6C6C6] shadow-2xl border-r border-gray-300/20">
+    <nav className="fixed left-0 top-0 py-2 h-screen w-52 bg-[#C6C6C6] shadow-2xl border-r border-gray-300/20">
+      <a className="text-black transition-all duration-300 text-2xl font-semibold flex items-center">
+        <img src="/logo.png" alt="logo" className="w-18 h-18" />
+        Percepta
+      </a>
+
       <div className="flex flex-col space-y-3 p-6">
         <Link to="/dashboard" className={getLinkClassName("/dashboard")}>
           <div className="flex items-center space-x-3">

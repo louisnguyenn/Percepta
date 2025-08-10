@@ -19,24 +19,20 @@ export const Dashboard = () => {
       location: "Front Door",
       severity: "Medium",
     },
-    {
-      time: "13:45",
-      type: "Door",
-      location: "Back Entrance",
-      severity: "Low",
+    { time: "13:45", 
+      type: "Door", 
+      location: "Back Entrance", 
+      severity: "Low" 
     },
-    {
-      time: "12:18",
-      type: "Motion",
-      location: "Garage",
-      severity: "High",
+    { time: "12:18", 
+      type: "Motion", 
+      location: "Garage", 
+      severity: "High" 
     },
-    {
-      time: "11:56",
-      type: "System",
-      location: "Camera 5",
-      severity: "Low",
-    },
+    { time: "11:56", 
+      type: "System", 
+      location: "Camera 5", 
+      severity: "Low" },
   ];
 
   const getSeverityColor = (severity) => {
@@ -53,7 +49,7 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#EEEEEE] p-5">
+    <div className="min-h-screen bg-[#EEEEEE] pl-5">
       <Sidebar />
 
       <div className="ml-45 p-8">
@@ -92,13 +88,10 @@ export const Dashboard = () => {
 
         <div className="mb-8">
           <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="mb-4">
               <h2 className="text-xl font-semibold text-gray-800">
                 Recent Alerts
               </h2>
-              <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                View All
-              </button>
             </div>
             <div className="space-y-3">
               {recentAlerts.map((alert, index) => (
