@@ -5,14 +5,14 @@ export const Sidebar = () => {
 
   const getLinkClassName = (path) => {
     const baseClasses =
-      "flex items-center px-6 py-4 text-slate-700 rounded-xl transition-all duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-md group relative overflow-hidden";
+      "flex items-center px-4 py-2 text-slate-700 transition-all duration-300 ease-in-out transform hover:scale-[1.04] hover:shadow-md group relative overflow-hidden";
     return location.pathname === path
-      ? `${baseClasses} bg-[#B0B0B0] font-bold shadow-lg scale-[1.02] text-slate-800`
-      : `${baseClasses} hover:bg-[#B0B0B0] hover:text-slate-800`;
+      ? `${baseClasses} bg-[#B0B0B0] font-bold shadow-lg scale-[1.02]`
+      : `${baseClasses} hover:bg-[#B0B0B0]`;
   };
 
   return (
-    <nav className="fixed left-0 top-0 h-screen w-52 bg-[#C6C6C6] shadow-2xl border-r border-gray-300/20">
+    <nav className="fixed left-0 top-0 h-screen w-52 py-2 bg-[#C6C6C6] shadow-2xl border-r border-gray-300/20">
       <div className="flex flex-col space-y-3 p-6">
         <Link to="/dashboard" className={getLinkClassName("/dashboard")}>
           <div className="flex items-center space-x-3">

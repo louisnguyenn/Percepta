@@ -19,9 +19,24 @@ export const Dashboard = () => {
       location: "Front Door",
       severity: "Medium",
     },
-    { time: "13:45", type: "Door", location: "Back Entrance", severity: "Low" },
-    { time: "12:18", type: "Motion", location: "Garage", severity: "High" },
-    { time: "11:56", type: "System", location: "Camera 5", severity: "Low" },
+    {
+      time: "13:45",
+      type: "Door",
+      location: "Back Entrance",
+      severity: "Low",
+    },
+    {
+      time: "12:18",
+      type: "Motion",
+      location: "Garage",
+      severity: "High",
+    },
+    {
+      time: "11:56",
+      type: "System",
+      location: "Camera 5",
+      severity: "Low",
+    },
   ];
 
   const getSeverityColor = (severity) => {
