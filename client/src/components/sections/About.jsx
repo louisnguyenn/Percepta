@@ -1,3 +1,5 @@
+import AnimatedContent from "../AnimatedContent";
+
 export const About = () => {
   return (
     <section
@@ -6,26 +8,39 @@ export const About = () => {
       style={{
         backgroundImage: "url(/eagle_outline_bg.png)",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundSize: "170%",
         backgroundPosition: "center",
-        backgroundBlendMode: "overlay"
+        backgroundBlendMode: "overlay",
       }}
     >
       <div className="max-w-6xl mx-auto z-10">
-        <div className="flex flex-col justify-center items-center">
-          <h2 className="text-5xl text-[#FF8C42] font-semibold mb-3">
-            Who We Are
-          </h2>
-          <hr className="px-7 border-none bg-[#FF8C42] rounded h-1"></hr>
-          <p className="max-w-4xl p-6 text-center text-lg leading-8">
-            Percepta is a cutting-edge human detection system that leverages
-            advanced computer vision and AI technology to provide real-time
-            monitoring and security solutions. Our platform intelligently
-            identifies and tracks human presence in recorded environments,
-            delivering accurate detection capabilities for enhanced safety and
-            security monitoring.
-          </p>
-        </div>
+        <AnimatedContent
+          distance={150}
+          direction="vertical"
+          reverse={false}
+          duration={1.2}
+          ease="bounce.out"
+          initialOpacity={0.2}
+          animateOpacity
+          scale={1.1}
+          threshold={0.2}
+          delay={0.3}
+        >
+          <div className="flex flex-col justify-center items-center">
+            <h2 className="text-5xl text-[#FF8C42] font-semibold mb-3">
+              Who We Are
+            </h2>
+            <hr className="px-7 border-none bg-[#FF8C42] rounded h-1"></hr>
+            <p className="max-w-4xl p-6 text-center text-lg leading-8">
+              Percepta is a cutting-edge human detection system that leverages
+              advanced computer vision and AI technology to provide real-time
+              monitoring and security solutions. Our platform intelligently
+              identifies and tracks human presence in recorded environments,
+              delivering accurate detection capabilities for enhanced safety and
+              security monitoring.
+            </p>
+          </div>
+        </AnimatedContent>
 
         <div className="py-15 flex flex-col justify-center items-center">
           <h2 className="text-5xl text-[#FF8C42] font-semibold mb-3">
