@@ -1,4 +1,5 @@
 import AnimatedContent from "../AnimatedContent";
+import { ScrollReveal } from "../ScrollReveal";
 
 export const About = () => {
   return (
@@ -14,18 +15,7 @@ export const About = () => {
       }}
     >
       <div className="max-w-6xl mx-auto z-10">
-        <AnimatedContent
-          distance={150}
-          direction="vertical"
-          reverse={false}
-          duration={1.2}
-          ease="bounce.out"
-          initialOpacity={0.2}
-          animateOpacity
-          scale={1.1}
-          threshold={0.2}
-          delay={0.3}
-        >
+        <ScrollReveal direction="up" distance={50} duration={0.8}>
           <div className="flex flex-col justify-center items-center">
             <h2 className="text-5xl text-[#FF8C42] font-semibold mb-3">
               Who We Are
@@ -40,22 +30,25 @@ export const About = () => {
               security monitoring.
             </p>
           </div>
-        </AnimatedContent>
+        </ScrollReveal>
 
-        <div className="py-15 flex flex-col justify-center items-center">
-          <h2 className="text-5xl text-[#FF8C42] font-semibold mb-3">
-            Our Goal
-          </h2>
-          <hr className="px-7 border-none bg-[#FF8C42] rounded h-1"></hr>
-          <p className="max-w-4xl p-6 text-center text-lg leading-8">
-            Our goal is to revolutionize security monitoring by making advanced
-            human detection technology accessible, reliable, and effortless to
-            deploy. We strive to empower organizations with intelligent
-            surveillance solutions that enhance safety while maintaining privacy
-            and operational efficiency, ultimately creating safer environments
-            through innovative AI-driven security intelligence.
-          </p>
-        </div>
+        <ScrollReveal direction="up" distance={50} duration={0.8}>
+          <div className="py-15 flex flex-col justify-center items-center">
+            <h2 className="text-5xl text-[#FF8C42] font-semibold mb-3">
+              Our Goal
+            </h2>
+            <hr className="px-7 border-none bg-[#FF8C42] rounded h-1"></hr>
+            <p className="max-w-4xl p-6 text-center text-lg leading-8">
+              Our goal is to revolutionize security monitoring by making
+              advanced human detection technology accessible, reliable, and
+              effortless to deploy. We strive to empower organizations with
+              intelligent surveillance solutions that enhance safety while
+              maintaining privacy and operational efficiency, ultimately
+              creating safer environments through innovative AI-driven security
+              intelligence.
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
