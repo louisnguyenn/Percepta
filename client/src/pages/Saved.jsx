@@ -1,6 +1,9 @@
+import { Sidebar } from "../components/Sidebar";
+
 export const Saved = () => {
-    return (
-        <>
-        </>
-    )
-}
+  return (
+    <div className="min-h-screen">
+      <Sidebar />
+    </div>
+  );
+};

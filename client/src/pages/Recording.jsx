@@ -1,6 +1,9 @@
+import { Sidebar } from "../components/Sidebar";
+
 export const Recording = () => {
-    return (
-        <>
-        </>
-    )
-}
+  return (
+    <div className="min-h-screen">
+      <Sidebar />
+    </div>
+  );
+};
