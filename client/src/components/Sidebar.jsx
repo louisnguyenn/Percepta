@@ -14,6 +14,14 @@ export const Sidebar = () => {
   return (
     <nav className="fixed left-0 top-0 h-screen w-52 bg-[#C6C6C6] shadow-2xl border-r border-gray-300/20">
       <div className="flex flex-col space-y-3 p-6">
+        <Link to="/dashboard" className={getLinkClassName("/dashboard")}>
+          <div className="flex items-center space-x-3">
+            <div className="w-2 h-2 rounded-full bg-orange-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span className="text-lg font-medium tracking-wide">Dashboard</span>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </Link>
+
         <Link to="/recording" className={getLinkClassName("/recording")}>
           <div className="flex items-center space-x-3">
             <div className="w-2 h-2 rounded-full bg-red-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
