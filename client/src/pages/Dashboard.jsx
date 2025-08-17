@@ -1,6 +1,6 @@
 import { Sidebar } from "../components/Sidebar";
 import { useState, useEffect } from "react";
-import { Camera, AlertCircle, CheckCircle, Loader2 } from "lucide-react";
+import { Camera, AlertCircle, CheckCircle, Loader2, X } from "lucide-react";
 import axios from "axios";
 
 export const Dashboard = () => {
@@ -35,7 +35,7 @@ export const Dashboard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#EEEEEE] pl-5 flex flex-col">
+    <div className="min-h-screen bg-[#EEEEEE] pl-5 flex flex-col relative">
       <Sidebar />
 
       <div className="ml-45 p-8 flex-1 flex flex-col">
@@ -61,7 +61,7 @@ export const Dashboard = () => {
           <div className="border border-3 border-gray-500 h-130 w-270"></div>
         </div>
 
-        <div className="mt-auto flex flex-col items-center space-y-4 pb-6">
+        <div className="mt-auto flex flex-col items-center space-y-4">
           <button
             onClick={testDetection}
             disabled={isDetecting}
@@ -83,60 +83,76 @@ export const Dashboard = () => {
           <p className="text-gray-500 text-sm">
             Make sure your camera is not being used by other applications
           </p>
-
-          {error && (
-            <div className="w-full max-w-2xl mx-auto bg-red-500/20 border border-red-500/50 rounded-lg p-4 mt-4">
-              <div className="flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-red-500" />
-                <span className="font-bold text-black">Error</span>
-              </div>
-              <p className="text-black mt-2">{error}</p>
-              <div className="mt-3">
-                <p className="text-black font-semibold">Troubleshooting:</p>
-                <ul className="list-disc list-inside mt-1 space-y-1 text-black">
-                  <li>Make sure Flask backend is running (python3 (or python) app.py)</li>
-                  <li>Check if camera is available and not used by other apps</li>
-                  <li>Verify CORS is enabled in Flask</li>
-                  <li>Try refreshing the page</li>
-                </ul>
-              </div>
-            </div>
-          )}
-
-          {result && (
-            <div className="bg-green-500/20 border border-green-500/50 rounded-lg p-4">
-              <div className="flex items-center gap-2 text-green-200 mb-3">
-                <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">Detection Complete!</span>
-              </div>
-              <div className="space-y-2 text-white">
-                <p>
-                  <strong>Message:</strong> {result.message}
-                </p>
-                <p>
-                  <strong>People Detected:</strong> {result.people_detected}
-                </p>
-                {result.image_saved_as && (
-                  <p>
-                    <strong>Image Saved:</strong> {result.image_saved_as}
-                  </p>
-                )}
-              </div>
-              {result.people_detected > 0 && (
-                <div className="mt-4 p-3 bg-yellow-500/20 border border-yellow-500/50 rounded">
-                  <p className="text-yellow-200 font-medium">
-                    🚨 Intrusion Detected!
-                  </p>
-                  <p className="text-yellow-100 text-sm">
-                    {result.people_detected} person(s) detected in the camera
-                    feed.
-                  </p>
-                </div>
-              )}
-            </div>
-          )}
         </div>
       </div>
+
+      {error && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/20 z-50">
+          <div className="w-full max-w-2xl mx-4 bg-red-500/20 border border-red-500/50 rounded-lg p-4 relative">
+            <button
+              onClick={() => setError(null)}
+              className="absolute top-2 right-2 text-red-500 hover:text-red-700 transition-colors"
+            >
+              <X className="w-5 h-5 cursor-pointer" />
+            </button>
+            <div className="flex items-center gap-2">
+              <AlertCircle className="w-5 h-5 text-red-500" />
+              <span className="font-bold text-black">Error</span>
+            </div>
+            <p className="text-black mt-2">{error}</p>
+            <div className="mt-3">
+              <p className="text-black font-semibold">Troubleshooting:</p>
+              <ul className="list-disc list-inside mt-1 space-y-1 text-black">
+                <li>Make sure Flask backend is running (python3 app.py)</li>
+                <li>Check if camera is available and not used by other apps</li>
+                <li>Verify CORS is enabled in Flask</li>
+                <li>Try refreshing the page</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {result && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+          <div className="w-full max-w-2xl mx-4 bg-green-500/20 border border-green-500/50 rounded-lg p-4 relative">
+            <button
+              onClick={() => setResult(null)}
+              className="absolute top-2 right-2 text-green-500 hover:text-green-700 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div className="flex items-center gap-2 text-green-200 mb-3">
+              <CheckCircle className="w-5 h-5" />
+              <span className="font-medium">Detection Complete!</span>
+            </div>
+            <div className="space-y-2 text-white">
+              <p>
+                <strong>Message:</strong> {result.message}
+              </p>
+              <p>
+                <strong>People Detected:</strong> {result.people_detected}
+              </p>
+              {result.image_saved_as && (
+                <p>
+                  <strong>Image Saved:</strong> {result.image_saved_as}
+                </p>
+              )}
+            </div>
+            {result.people_detected > 0 && (
+              <div className="mt-4 p-3 bg-yellow-500/20 border border-yellow-500/50 rounded">
+                <p className="text-yellow-200 font-medium">
+                  🚨 Intrusion Detected!
+                </p>
+                <p className="text-yellow-100 text-sm">
+                  {result.people_detected} person(s) detected in the camera
+                  feed.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
