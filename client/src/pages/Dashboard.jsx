@@ -58,7 +58,34 @@ export const Dashboard = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center flex-1 pb-6">
-          <div className="border border-3 border-gray-500 h-130 w-270"></div>
+          <div className="border border-3 border-gray-500 h-130 w-270 relative">
+            {error && (
+              <div className="absolute inset-0 flex items-center justify-center p-4">
+                <div className="w-full max-w-xl bg-red-500/20 border border-red-500/50 rounded-lg p-5 relative">
+                  <button
+                    onClick={() => setError(null)}
+                    className="absolute top-2 right-2 text-red-500 hover:text-red-700 transition-colors"
+                  >
+                    <X className="w-5 h-5 cursor-pointer" />
+                  </button>
+                  <div className="flex items-center gap-2">
+                    <AlertCircle className="w-5 h-5 text-red-500" />
+                    <span className="font-bold text-black">Error</span>
+                  </div>
+                  <p className="text-black mt-2">{error}</p>
+                  <div className="mt-3">
+                    <p className="text-black font-semibold">Troubleshooting:</p>
+                    <ul className="list-disc list-inside mt-1 space-y-1 text-black">
+                      <li>Make sure Flask backend is running (python3 (or python) app.py)</li>
+                      <li>Check if camera is available and not used by other apps</li>
+                      <li>Verify CORS is enabled in Flask</li>
+                      <li>Try refreshing the page</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="mt-auto flex flex-col items-center space-y-4">
@@ -85,33 +112,6 @@ export const Dashboard = () => {
           </p>
         </div>
       </div>
-
-      {error && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/20 z-50">
-          <div className="w-full max-w-2xl mx-4 bg-red-500/20 border border-red-500/50 rounded-lg p-4 relative">
-            <button
-              onClick={() => setError(null)}
-              className="absolute top-2 right-2 text-red-500 hover:text-red-700 transition-colors"
-            >
-              <X className="w-5 h-5 cursor-pointer" />
-            </button>
-            <div className="flex items-center gap-2">
-              <AlertCircle className="w-5 h-5 text-red-500" />
-              <span className="font-bold text-black">Error</span>
-            </div>
-            <p className="text-black mt-2">{error}</p>
-            <div className="mt-3">
-              <p className="text-black font-semibold">Troubleshooting:</p>
-              <ul className="list-disc list-inside mt-1 space-y-1 text-black">
-                <li>Make sure Flask backend is running (python3 app.py)</li>
-                <li>Check if camera is available and not used by other apps</li>
-                <li>Verify CORS is enabled in Flask</li>
-                <li>Try refreshing the page</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      )}
 
       {result && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
