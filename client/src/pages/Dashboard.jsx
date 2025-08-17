@@ -34,6 +34,10 @@ export const Dashboard = () => {
           </div>
         </div>
 
+        <div className="flex flex-col justify-center items-center">
+          <div className="border border-3 border-gray-500 h-130 w-270"></div>
+        </div>
+
         <div className="flex-1"></div>
         <div className="flex justify-center pb-8">
           <button className="rounded-full bg-[#F59E0B] px-4 py-2 text-white font-semibold hover:bg-[#D97706] transition-colors duration-300 cursor-pointer">
