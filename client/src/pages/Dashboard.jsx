@@ -57,12 +57,11 @@ export const Dashboard = () => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center flex-1 pb-6">
           <div className="border border-3 border-gray-500 h-130 w-270"></div>
         </div>
 
-        <div className="flex-1"></div>
-        <div className="flex justify-center pb-3">
+        <div className="mt-auto flex flex-col items-center space-y-4 pb-6">
           <button
             onClick={testDetection}
             disabled={isDetecting}
@@ -80,10 +79,63 @@ export const Dashboard = () => {
               </>
             )}
           </button>
+
+          <p className="text-gray-500 text-sm">
+            Make sure your camera is not being used by other applications
+          </p>
+
+          {error && (
+            <div className="w-full max-w-2xl mx-auto bg-red-500/20 border border-red-500/50 rounded-lg p-4 mt-4">
+              <div className="flex items-center gap-2">
+                <AlertCircle className="w-5 h-5 text-red-500" />
+                <span className="font-bold text-black">Error</span>
+              </div>
+              <p className="text-black mt-2">{error}</p>
+              <div className="mt-3">
+                <p className="text-black font-semibold">Troubleshooting:</p>
+                <ul className="list-disc list-inside mt-1 space-y-1 text-black">
+                  <li>Make sure Flask backend is running (python3 (or python) app.py)</li>
+                  <li>Check if camera is available and not used by other apps</li>
+                  <li>Verify CORS is enabled in Flask</li>
+                  <li>Try refreshing the page</li>
+                </ul>
+              </div>
+            </div>
+          )}
+
+          {result && (
+            <div className="bg-green-500/20 border border-green-500/50 rounded-lg p-4">
+              <div className="flex items-center gap-2 text-green-200 mb-3">
+                <CheckCircle className="w-5 h-5" />
+                <span className="font-medium">Detection Complete!</span>
+              </div>
+              <div className="space-y-2 text-white">
+                <p>
+                  <strong>Message:</strong> {result.message}
+                </p>
+                <p>
+                  <strong>People Detected:</strong> {result.people_detected}
+                </p>
+                {result.image_saved_as && (
+                  <p>
+                    <strong>Image Saved:</strong> {result.image_saved_as}
+                  </p>
+                )}
+              </div>
+              {result.people_detected > 0 && (
+                <div className="mt-4 p-3 bg-yellow-500/20 border border-yellow-500/50 rounded">
+                  <p className="text-yellow-200 font-medium">
+                    🚨 Intrusion Detected!
+                  </p>
+                  <p className="text-yellow-100 text-sm">
+                    {result.people_detected} person(s) detected in the camera
+                    feed.
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
-        <p className="text-center flex flex-col text-gray-500 text-sm mt-2">
-          Make sure your camera is not being used by other applications
-        </p>
       </div>
     </div>
   );
