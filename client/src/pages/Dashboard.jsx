@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 export const Dashboard = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [systemStatus, setSystemStatus] = useState("Active");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -13,17 +12,16 @@ export const Dashboard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#EEEEEE] pl-5">
+    <div className="min-h-screen bg-[#EEEEEE] pl-5 flex flex-col">
       <Sidebar />
 
-      <div className="ml-45 p-8">
+      <div className="ml-45 p-8 flex-1 flex flex-col">
         <div className="mb-8">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-gray-800 mb-2">
                 Security Dashboard
               </h1>
-              <p className="text-gray-600">Monitor your home security system</p>
             </div>
             <div className="text-right">
               <div className="text-2xl font-mono text-gray-800">
@@ -34,6 +32,13 @@ export const Dashboard = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="flex-1"></div>
+        <div className="flex justify-center pb-8">
+          <button className="rounded-full bg-[#F59E0B] px-4 py-2 text-white font-semibold hover:bg-[#D97706] transition-colors duration-300 cursor-pointer">
+            Start Recording
+          </button>
         </div>
       </div>
     </div>

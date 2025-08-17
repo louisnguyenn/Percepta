@@ -27,22 +27,6 @@ export const Sidebar = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </Link>
 
-        <Link to="/recording" className={getLinkClassName("/recording")}>
-          <div className="flex items-center space-x-3">
-            <div className="w-2 h-2 rounded-full bg-red-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="text-lg font-medium tracking-wide">Recording</span>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </Link>
-
-        <Link to="/saved" className={getLinkClassName("/saved")}>
-          <div className="flex items-center space-x-3">
-            <div className="w-2 h-2 rounded-full bg-green-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="text-lg font-medium tracking-wide">Saved</span>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </Link>
-
         <Link to="/" className={getLinkClassName("/")}>
           <div className="flex items-center space-x-3">
             <div className="w-2 h-2 rounded-full bg-blue-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
