@@ -19,26 +19,26 @@ export const Sidebar = () => {
       </a>
 
       <div className="flex flex-col space-y-3 p-6">
-        <Link to="/dashboard" className={getLinkClassName("/live")}>
+        <Link to="/live" className={getLinkClassName("/live")}>
           <div className="flex items-center space-x-3">
             <div className="w-2 h-2 rounded-full bg-orange-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="text-lg font-medium tracking-wide">Dashboard</span>
+            <span className="text-lg font-medium tracking-wide">Live Recording</span>
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </Link>
 
-        <Link to="/dashboard" className={getLinkClassName("/video")}>
+        <Link to="/video" className={getLinkClassName("/video")}>
           <div className="flex items-center space-x-3">
             <div className="w-2 h-2 rounded-full bg-orange-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="text-lg font-medium tracking-wide">Dashboard</span>
+            <span className="text-lg font-medium tracking-wide">Video Recording</span>
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </Link>
 
-        <Link to="/dashboard" className={getLinkClassName("/image")}>
+        <Link to="/image" className={getLinkClassName("/image")}>
           <div className="flex items-center space-x-3">
             <div className="w-2 h-2 rounded-full bg-orange-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="text-lg font-medium tracking-wide">Dashboard</span>
+            <span className="text-lg font-medium tracking-wide">Image</span>
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </Link>
