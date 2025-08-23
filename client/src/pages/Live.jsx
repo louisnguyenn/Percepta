@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import axios from "axios";
 
-export const Dashboard = () => {
+export const Live = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isDetecting, setIsDetecting] = useState(false);
   const [isCameraOn, setIsCameraOn] = useState(false);

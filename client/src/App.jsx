@@ -2,7 +2,9 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Test } from "./components/test.jsx";
 import { Home } from "./pages/Home";
-import { Dashboard } from "./pages/Dashboard.jsx";
+import { Live } from "./pages/Live";
+import { Video } from "./pages/Video";
+import { Image } from "./pages/Image";
 import "./index.css";
 
 function App() {
@@ -23,7 +25,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/live" element={<Live />} />
+          <Route path="/video" element={<Video />} />
+          <Route path="/image" element={<Image />} />
         </Routes>
       </BrowserRouter>
     </>

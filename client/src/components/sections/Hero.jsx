@@ -1,15 +1,13 @@
 import StarBorder from "../StarBorder";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight, Shield, Eye, Users, AlertTriangle } from "lucide-react";
-import CountUp from "../CountUp";
 import { ScrollReveal } from "../ScrollReveal";
+import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate("/dashboard");
-    console.log("Get Started clicked!");
+    navigate("/live");
   };
 
   return (

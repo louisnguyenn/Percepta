@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 export const Sidebar = () => {
   const location = useLocation();
 
-  const getLinkClassName = (path) => {
+  const getLinkClassName = path => {
     const baseClasses =
       "flex items-center px-4 py-2 text-slate-700 transition-all duration-300 ease-in-out transform hover:scale-[1.04] hover:shadow-md group relative overflow-hidden";
     return location.pathname === path
@@ -19,7 +19,23 @@ export const Sidebar = () => {
       </a>
 
       <div className="flex flex-col space-y-3 p-6">
-        <Link to="/dashboard" className={getLinkClassName("/dashboard")}>
+        <Link to="/dashboard" className={getLinkClassName("/live")}>
+          <div className="flex items-center space-x-3">
+            <div className="w-2 h-2 rounded-full bg-orange-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span className="text-lg font-medium tracking-wide">Dashboard</span>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </Link>
+
+        <Link to="/dashboard" className={getLinkClassName("/video")}>
+          <div className="flex items-center space-x-3">
+            <div className="w-2 h-2 rounded-full bg-orange-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span className="text-lg font-medium tracking-wide">Dashboard</span>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </Link>
+
+        <Link to="/dashboard" className={getLinkClassName("/image")}>
           <div className="flex items-center space-x-3">
             <div className="w-2 h-2 rounded-full bg-orange-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="text-lg font-medium tracking-wide">Dashboard</span>
