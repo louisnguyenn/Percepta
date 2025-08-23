@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Test } from "./components/test.jsx";
 import { Home } from "./pages/Home";
 import { Live } from "./pages/Live";
 import { Video } from "./pages/Video";

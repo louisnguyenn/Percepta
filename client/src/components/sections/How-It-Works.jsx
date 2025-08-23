@@ -14,7 +14,8 @@ export const HowItWorks = () => {
             </h2>
             <hr className="px-7 border-none bg-[#FF8C42] rounded h-1"></hr>
             <p className="max-w-4xl p-6 text-center text-lg leading-8">
-              Percepta analyzes video recordings using sophisticated machine
+              Percepta analyzes live recordings from your local camera, video
+              recordings, or by scanning images by using machine
               learning algorithms trained specifically for human detection. Our
               system processes footage frame by frame, identifying human figures
               through advanced pattern recognition and motion analysis. The AI
