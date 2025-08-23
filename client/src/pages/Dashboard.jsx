@@ -203,7 +203,7 @@ export const Dashboard = () => {
                 isCameraOn
                   ? 'bg-red-600 hover:bg-red-700'
                   : 'bg-blue-600 hover:bg-blue-700'
-              } text-white font-medium py-2 px-4 rounded-lg transition-all transform hover:scale-105 duration-300 flex gap-2 items-center`}
+              } text-white font-medium py-2 px-4 rounded-lg transition-all transform hover:scale-105 duration-300 flex gap-2 items-center cursor-pointer`}
             >
               {isCameraOn ? (
                 <>
@@ -221,7 +221,7 @@ export const Dashboard = () => {
             <button
               onClick={testDetection}
               disabled={isDetecting || !isCameraOn}
-              className="bg-[#F59E0B] hover:bg-[#D97706] disabled:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition-all transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed duration-300 flex gap-2 items-center"
+              className="bg-[#F59E0B] hover:bg-[#D97706] disabled:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition-all transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed duration-300 flex gap-2 items-center cursor-pointer"
             >
               {isDetecting ? (
                 <>
