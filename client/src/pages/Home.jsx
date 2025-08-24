@@ -2,7 +2,6 @@ import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/sections/Hero";
 import { HowItWorks } from "../components/sections/How-It-Works";
 import { About } from "../components/sections/About";
-import { Contact } from "../components/sections/Contact";
 import { Footer } from "../components/sections/Footer";
 
 export const Home = () => {
@@ -12,7 +11,6 @@ export const Home = () => {
       <Hero />
       <HowItWorks />
       <About />
-      <Contact />
       <Footer />
     </>
   );
