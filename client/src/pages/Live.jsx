@@ -1,5 +1,5 @@
 import { Sidebar } from "../components/Sidebar";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   Camera,
   AlertCircle,
@@ -17,39 +17,21 @@ export const Live = () => {
   const [isCameraOn, setIsCameraOn] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
-  const videoRef = useRef(null);
+  const [streamKey, setStreamKey] = useState(0); // For forcing stream refresh
 
   const startCamera = async () => {
     try {
       setError(null);
+      console.log("🎬 Starting camera...");
+
       const response = await axios.post(
         "http://localhost:5000/api/start-camera"
       );
 
       if (response.data.message) {
         setIsCameraOn(true);
-
-        // Debug the videoRef
-        console.log("🎬 isCameraOn set to true");
-        console.log("📹 videoRef.current:", videoRef.current);
-
-        // Wait for React to render the video element
-        setTimeout(() => {
-          console.log("⏰ After timeout, videoRef.current:", videoRef.current);
-
-          if (videoRef.current) {
-            const videoUrl = `http://localhost:5000/api/video-feed?t=${Date.now()}`;
-            console.log("🔗 Setting video src:", videoUrl);
-
-            videoRef.current.src = videoUrl;
-            console.log("✅ Video src set to:", videoRef.current.src);
-
-            videoRef.current.load();
-            console.log("🔄 Video load() called");
-          } else {
-            console.error("❌ videoRef.current is still null after timeout!");
-          }
-        }, 100);
+        setStreamKey(prev => prev + 1); // Force refresh of stream
+        console.log("✅ Camera started successfully");
       }
     } catch (err) {
       setError(err.response?.data?.error || err.message);
@@ -59,11 +41,12 @@ export const Live = () => {
 
   const stopCamera = async () => {
     try {
+      console.log("🛑 Stopping camera...");
       await axios.post("http://localhost:5000/api/stop-camera");
       setIsCameraOn(false);
-      if (videoRef.current) {
-        videoRef.current.src = "";
-      }
+      setStreamKey(prev => prev + 1); // Clear the stream
+      setError(null);
+      console.log("✅ Camera stopped successfully");
     } catch (err) {
       console.error("Camera stop error:", err);
     }
@@ -129,20 +112,28 @@ export const Live = () => {
             style={{ width: "640px", height: "480px" }}
           >
             {isCameraOn ? (
-              <video
-                ref={videoRef}
+              <img
+                key={streamKey} // This forces re-render when stream changes
+                src={`http://localhost:5000/api/video-feed?t=${Date.now()}`}
+                alt="Live camera feed"
                 className="w-full h-full object-cover"
-                autoPlay
-                muted
-                controls // ADD THIS temporarily to see video controls
                 onError={e => {
-                  console.error("Video error:", e.target.error);
-                  setError("Failed to load video stream");
+                  console.error("=== IMAGE STREAM ERROR ===");
+                  console.error("Failed to load:", e.target.src);
+                  console.error("Error event:", e);
+                  setError(
+                    "Failed to load video stream - check if backend is running"
+                  );
                 }}
-                onLoadStart={() => console.log("🎥 Video loading started")}
-                onLoadedData={() => console.log("✅ Video data loaded")}
-                onCanPlay={() => console.log("▶️ Video can play")}
-                onPlay={() => console.log("🔴 Video playing")}
+                onLoad={() => {
+                  console.log("✅ Stream loaded successfully");
+                  setError(null); // Clear any previous errors
+                }}
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "100%",
+                  objectFit: "cover",
+                }}
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center bg-gray-800">
@@ -246,12 +237,12 @@ export const Live = () => {
 
       {result && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-          <div className="w-full max-w-2xl mx-4 bg-green-500/20 border border-green-500/50 rounded-lg p-4 relative">
+          <div className="w-full max-w-2xl mx-4 bg-green-500/30 border border-green-500/50 rounded-lg p-4 relative">
             <button
               onClick={() => setResult(null)}
               className="absolute top-2 right-2 text-green-500 hover:text-green-700 transition-colors"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 cursor-pointer" />
             </button>
             <div className="flex items-center gap-2 text-green-200 mb-3">
               <CheckCircle className="w-5 h-5" />
