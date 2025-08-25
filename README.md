@@ -8,8 +8,7 @@
 
 - 🔍 **Real-time Human Detection** using your webcam
 - 🎯 **Intrusion Logging** with frame capture
-- 🔔 **Alert System and Mobile Notifications** (email/SMS/Telegram integration)
-- 📹 **Optional Video Recording** of suspicious activity
+- 📹 **Uploaded Video Recording** of suspicious activity
 
 ---
 
