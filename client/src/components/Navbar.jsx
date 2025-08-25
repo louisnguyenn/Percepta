@@ -4,7 +4,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate("/dashboard");
+    navigate("/live");
   };
 
   return (
