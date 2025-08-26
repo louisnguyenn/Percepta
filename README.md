@@ -2,6 +2,9 @@
 
 **Percepta** is a full-stack web application that uses your webcam to detect unauthorized human presence in real-time. Designed with home and office security in mind, it captures video frames, logs intrusions, and sends alerts when necessary.
 
+<img src="docs/images/percepta.png">
+<img src="docs/images/dashboard.png">
+
 ---
 
 ## 🚀 Features
