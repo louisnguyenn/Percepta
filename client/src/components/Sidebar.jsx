@@ -27,13 +27,13 @@ export const Sidebar = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </Link>
 
-        <Link to="/video" className={getLinkClassName("/video")}>
+        {/* <Link to="/video" className={getLinkClassName("/video")}>
           <div className="flex items-center space-x-3">
             <div className="w-2 h-2 rounded-full bg-orange-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="text-lg font-medium tracking-wide">Video Recording</span>
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </Link>
+        </Link> */}
 
         {/* <Link to="/image" className={getLinkClassName("/image")}>
           <div className="flex items-center space-x-3">
