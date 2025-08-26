@@ -22,26 +22,6 @@ export const Navbar = () => {
             />
             Percepta
           </a>
-          <div className="hidden md:flex items-center space-x-8 ml-auto">
-            <a
-              href="#how-it-works"
-              className="text-white transition-all duration-300 hover:scale-105 hover:font-semibold"
-            >
-              How It Works
-            </a>
-            <a
-              href="#about"
-              className="text-white transition-all duration-300 hover:scale-105 hover:font-semibold"
-            >
-              About
-            </a>
-            <a
-              className="text-white bg-[#e67a32] rounded-full border border-white/70 px-4 py-2 transition-all duration-300 cursor-pointer hover:scale-107 hover:font-semibold hover:border-white"
-              onClick={handleGetStarted}
-            >
-              Get Started
-            </a>
-          </div>
         </div>
       </nav>
     </>
