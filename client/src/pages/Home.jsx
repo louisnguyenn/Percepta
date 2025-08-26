@@ -2,6 +2,7 @@ import StarBorder from "../components/StarBorder";
 import { useNavigate } from "react-router-dom";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { ArrowRight } from "lucide-react";
+import { Navbar } from "../components/Navbar";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -13,8 +14,9 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full flex flex-col items-center justify-center px-6 text-white text-center bg-[#2a2a2a]"
+      className="h-full w-full flex flex-col items-center justify-center px-6 text-white text-center bg-[#2a2a2a]"
     >
+      <Navbar />
       <ScrollReveal direction="up" distance={50} duration={0.8}>
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mt-15 mb-12">

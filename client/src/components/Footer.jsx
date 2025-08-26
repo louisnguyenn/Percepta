@@ -1,11 +1,11 @@
 export const Footer = () => {
-  return (
-    <footer className="bg-[#1a1a1a] text-white py-8 px-6 border-t border-white/10 relative">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-        <p className="text-white">
-          &copy; {new Date().getFullYear()} Percepta. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  );
+	return (
+		<footer className="bg-[#3a3a3a] shadow-lg border-t border-white/10">
+			<div className="w-full mx-auto max-w-screen-xl p-6 md:flex md:items-center md:justify-between">
+				<span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+					&copy; {new Date().getFullYear()} Percepta. All Rights Reserved.
+				</span>
+			</div>
+		</footer>
+	);
 };
