@@ -9,21 +9,18 @@ import { Image } from "./pages/Image";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Navbar />
-              <Home />
-              <Footer />
-            </>
-          }
-        />
-        <Route path="/live" element={<Live />} />
-        <Route path="/video" element={<Video />} />
-        <Route path="/image" element={<Image />} />
-      </Routes>
+      <div className="h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1 overflow-auto">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/live" element={<Live />} />
+            <Route path="/video" element={<Video />} />
+            <Route path="/image" element={<Image />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
