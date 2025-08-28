@@ -7,7 +7,7 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-cors = CORS(app, origins=['*']) # this allows frontend to access the backend to all origins (or origins=['http://localhost:5173']) would also work
+cors = CORS(app, origins=['http://localhost:5173']) # this allows frontend to access the backend to the vite default origin ( or origins=['*']) would also work for all local host numbers
 
 os.makedirs('detections', exist_ok=True)
 
