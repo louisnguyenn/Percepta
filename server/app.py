@@ -56,7 +56,6 @@ def generate_frames():
         else:
             print("✓ Frame read successfully")
             
-            # Use your existing detect function for the video stream
             frame = imutils.resize(frame, width=min(800, frame.shape[1]))
             processed_frame, people_count = detect(frame)
             
@@ -72,7 +71,6 @@ def generate_frames():
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
-# NEW: Video feed endpoint
 @app.route('/api/video-feed')
 def video_feed():
     """Video streaming route"""
@@ -89,7 +87,6 @@ def start_camera():
     print("🎥 Attempting to start camera...")
     camera = cv2.VideoCapture(0)
     
-    # Use your existing camera setup logic
     if not camera.isOpened():
         print("❌ Camera 0 failed, trying others...")
         for i in range(1, 5):  # Try camera indices 1-4
@@ -106,7 +103,7 @@ def start_camera():
     camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
     
-    # Test if we can actually read a frame
+    # test if we can actually read a frame
     ret, test_frame = camera.read()
     if not ret:
         print("❌ Camera opened but cannot read frames")
@@ -116,7 +113,7 @@ def start_camera():
     
     return jsonify({"message": "Camera started successfully"})
 
-# NEW: Stop camera endpoint
+# stop camera function
 @app.route('/api/stop-camera', methods=['POST'])
 def stop_camera():
     global camera

@@ -13,16 +13,20 @@ export const Sidebar = () => {
 
   return (
     <nav className="fixed left-0 top-0 py-2 h-screen w-52 bg-[#C6C6C6] shadow-2xl border-r border-gray-300/20">
-      <a className="text-black transition-all duration-300 text-2xl font-semibold flex items-center">
-        <img src="/logo.png" alt="logo" className="w-18 h-18" />
-        Percepta
-      </a>
+      <Link>
+        <a className="text-black transition-all duration-300 text-2xl font-semibold hover:scale-103 hover:font-bold cursor-pointer flex items-center">
+          <img src="/logo.png" alt="logo" className="w-18 h-18" />
+          Percepta
+        </a>
+      </Link>
 
       <div className="flex flex-col space-y-3 p-6">
         <Link to="/live" className={getLinkClassName("/live")}>
           <div className="flex items-center space-x-3">
             <div className="w-2 h-2 rounded-full bg-red-500 opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <span className="text-lg font-medium tracking-wide">Live Recording</span>
+            <span className="text-lg font-medium tracking-wide">
+              Live Recording
+            </span>
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </Link>
